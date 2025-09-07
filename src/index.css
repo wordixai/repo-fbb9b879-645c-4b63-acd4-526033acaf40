@@ -4,6 +4,7 @@
 
 /* Definition of the design system. All colors, gradients, fonts, etc should be defined here. 
 All colors MUST be HSL.
+The @apply directive should not be used with the group utility class.
 */
 
 @layer base {
@@ -13,15 +14,5 @@ All colors MUST be HSL.
 
   .dark {
 
-  }
-}
-
-@layer base {
-  * {
-    @apply border-border;
-  }
-
-  body {
-    @apply bg-background text-foreground;
   }
 }
