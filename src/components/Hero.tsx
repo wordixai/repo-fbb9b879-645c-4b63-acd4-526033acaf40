@@ -37,7 +37,6 @@ const Hero: React.FC = () => {
         {/* Subtitle */}
         <p className="text-xl md:text-2xl text-gray-300 mb-12 max-w-3xl mx-auto leading-relaxed animate-fade-in-up delay-200">
           Unleash your creativity with our comprehensive toolkit. From design to deployment, 
-          we've got everything you need to bring your ideas to life.
         </p>
 
         {/* CTA Buttons */}
