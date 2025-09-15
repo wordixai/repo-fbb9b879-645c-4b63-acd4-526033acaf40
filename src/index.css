@@ -30,12 +30,12 @@ The @apply directive should not be used with the group utility class.
     --ring: 262 90% 65%;
     --radius: 0.75rem;
     
-    /* Carousel colors */
-    --tool-primary: 262 90% 65%;
-    --tool-secondary: 280 100% 70%;
-    --tool-accent: 300 100% 75%;
-    --tool-surface: 0 0% 98%;
-    --tool-surface-dark: 220 13% 18%;
+    /* Hero colors */
+    --hero-primary: 262 90% 65%;
+    --hero-secondary: 280 100% 70%;
+    --hero-accent: 300 100% 75%;
+    --hero-surface: 0 0% 98%;
+    --hero-surface-dark: 220 13% 18%;
   }
 
   .dark {
@@ -61,6 +61,60 @@ The @apply directive should not be used with the group utility class.
   }
 }
 
+/* Hero animations */
+@keyframes fade-in {
+  from {
+    opacity: 0;
+  }
+  to {
+    opacity: 1;
+  }
+}
+
+@keyframes fade-in-up {
+  from {
+    opacity: 0;
+    transform: translateY(30px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+.animate-fade-in {
+  animation: fade-in 1s ease-out;
+}
+
+.animate-fade-in-up {
+  animation: fade-in-up 1s ease-out;
+}
+
+.animate-fade-in-up.delay-200 {
+  animation-delay: 0.2s;
+  animation-fill-mode: both;
+}
+
+.animate-fade-in-up.delay-400 {
+  animation-delay: 0.4s;
+  animation-fill-mode: both;
+}
+
+.animate-fade-in-up.delay-600 {
+  animation-delay: 0.6s;
+  animation-fill-mode: both;
+}
+
+/* Hero button variants */
+.hero-primary {
+  @apply bg-gradient-to-r from-purple-600 to-pink-600 hover:from-purple-700 hover:to-pink-700 text-white border-0 shadow-lg hover:shadow-xl transition-all duration-300;
+}
+
+.hero-secondary {
+  @apply bg-white/10 hover:bg-white/20 text-white border-white/30 hover:border-white/50 backdrop-blur-sm transition-all duration-300;
+}
+
+/* Carousel animations */
 @keyframes scroll-right {
   0% {
     transform: translateX(0);
