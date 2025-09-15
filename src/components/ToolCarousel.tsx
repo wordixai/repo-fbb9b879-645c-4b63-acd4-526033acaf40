@@ -64,12 +64,22 @@ const CarouselRow: React.FC<{
   tools: Tool[]; 
   direction: 'left' | 'right'; 
   isPaused: boolean;
-}> = ({ tools, direction, isPaused }) => {
+  onMouseEnter: () => void;
+  onMouseLeave: () => void;
+  onTouchStart: () => void;
+  onTouchEnd: () => void;
+}> = ({ tools, direction, isPaused, onMouseEnter, onMouseLeave, onTouchStart, onTouchEnd }) => {
   // Duplicate tools to create seamless loop
   const duplicatedTools = [...tools, ...tools];
   
   return (
-    <div className="relative overflow-hidden">
+    <div 
+      className="relative overflow-hidden"
+      onMouseEnter={onMouseEnter}
+      onMouseLeave={onMouseLeave}
+      onTouchStart={onTouchStart}
+      onTouchEnd={onTouchEnd}
+    >
       <div 
         className={cn(
           "flex",
@@ -91,24 +101,26 @@ const CarouselRow: React.FC<{
 };
 
 const ToolCarousel: React.FC = () => {
-  const [isPaused, setIsPaused] = useState(false);
+  const [isFirstRowPaused, setIsFirstRowPaused] = useState(false);
+  const [isSecondRowPaused, setIsSecondRowPaused] = useState(false);
   
   const firstRowTools = tools.slice(0, 6);
   const secondRowTools = tools.slice(6, 12);
 
-  const handleMouseEnter = () => setIsPaused(true);
-  const handleMouseLeave = () => setIsPaused(false);
-  const handleTouchStart = () => setIsPaused(true);
-  const handleTouchEnd = () => setIsPaused(false);
+  // First row handlers
+  const handleFirstRowMouseEnter = () => setIsFirstRowPaused(true);
+  const handleFirstRowMouseLeave = () => setIsFirstRowPaused(false);
+  const handleFirstRowTouchStart = () => setIsFirstRowPaused(true);
+  const handleFirstRowTouchEnd = () => setIsFirstRowPaused(false);
+
+  // Second row handlers
+  const handleSecondRowMouseEnter = () => setIsSecondRowPaused(true);
+  const handleSecondRowMouseLeave = () => setIsSecondRowPaused(false);
+  const handleSecondRowTouchStart = () => setIsSecondRowPaused(true);
+  const handleSecondRowTouchEnd = () => setIsSecondRowPaused(false);
 
   return (
-    <div 
-      className="w-full space-y-8 py-8"
-      onMouseEnter={handleMouseEnter}
-      onMouseLeave={handleMouseLeave}
-      onTouchStart={handleTouchStart}
-      onTouchEnd={handleTouchEnd}
-    >
+    <div className="w-full space-y-8 py-8">
       <div className="text-center mb-12">
         <h2 className="text-4xl font-bold bg-gradient-to-r from-purple-600 to-pink-600 bg-clip-text text-transparent mb-4">
           Our Integrated Tools
@@ -121,13 +133,21 @@ const ToolCarousel: React.FC = () => {
       <CarouselRow 
         tools={firstRowTools} 
         direction="right" 
-        isPaused={isPaused}
+        isPaused={isFirstRowPaused}
+        onMouseEnter={handleFirstRowMouseEnter}
+        onMouseLeave={handleFirstRowMouseLeave}
+        onTouchStart={handleFirstRowTouchStart}
+        onTouchEnd={handleFirstRowTouchEnd}
       />
       
       <CarouselRow 
         tools={secondRowTools} 
         direction="left" 
-        isPaused={isPaused}
+        isPaused={isSecondRowPaused}
+        onMouseEnter={handleSecondRowMouseEnter}
+        onMouseLeave={handleSecondRowMouseLeave}
+        onTouchStart={handleSecondRowTouchStart}
+        onTouchEnd={handleSecondRowTouchEnd}
       />
     </div>
   );
