@@ -10,7 +10,7 @@ import {
   Zap, 
   Camera, 
   Shield, 
-  Chart3,
+  BarChart3,
   Figma,
   Github
 } from 'lucide-react';
@@ -33,7 +33,7 @@ const tools: Tool[] = [
   { id: '7', name: 'Performance', icon: <Zap />, category: 'Optimization', color: 'from-yellow-500 to-orange-600' },
   { id: '8', name: 'Camera', icon: <Camera />, category: 'Media', color: 'from-indigo-500 to-purple-600' },
   { id: '9', name: 'Security', icon: <Shield />, category: 'Security', color: 'from-red-500 to-pink-600' },
-  { id: '10', name: 'Analytics', icon: <Chart3 />, category: 'Analytics', color: 'from-teal-500 to-cyan-600' },
+  { id: '10', name: 'Analytics', icon: <BarChart3 />, category: 'Analytics', color: 'from-teal-500 to-cyan-600' },
   { id: '11', name: 'GitHub', icon: <Github />, category: 'Version Control', color: 'from-gray-600 to-gray-800' },
   { id: '12', name: 'Design Tools', icon: <Palette />, category: 'Creative', color: 'from-purple-500 to-pink-600' },
 ];
