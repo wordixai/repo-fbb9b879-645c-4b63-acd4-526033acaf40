@@ -19,10 +19,7 @@ const Hero: React.FC = () => {
       <div className="relative z-10 text-center px-4 max-w-5xl mx-auto">
 
 
-        {/* Subtitle */}
-        <p className="text-xl md:text-2xl text-gray-300 mb-12 max-w-3xl mx-auto leading-relaxed animate-fade-in-up delay-200">
-          Unleash your creativity with our comprehensive toolkit. From design to deployment, 
-        </p>
+  
 
         {/* CTA Buttons */}
         <div className="flex flex-col sm:flex-row gap-4 justify-center items-center mb-16 animate-fade-in-up delay-400">
