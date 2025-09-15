@@ -17,11 +17,7 @@ const Hero: React.FC = () => {
       </div>
 
       <div className="relative z-10 text-center px-4 max-w-5xl mx-auto">
-        {/* Badge */}
-        <div className="inline-flex items-center gap-2 px-4 py-2 rounded-full bg-white/10 backdrop-blur-sm border border-white/20 text-sm font-medium text-white mb-8 animate-fade-in">
-          <Sparkles className="w-4 h-4 text-yellow-300" />
-          <span>All-in-One Development Suite</span>
-        </div>
+
 
         {/* Main heading */}
         <h1 className="text-6xl md:text-8xl font-bold mb-6 animate-fade-in-up">
