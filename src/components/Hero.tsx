@@ -26,7 +26,7 @@ const Hero: React.FC = () => {
         {/* Main heading */}
         <h1 className="text-6xl md:text-8xl font-bold mb-6 animate-fade-in-up">
           <span className="bg-gradient-to-r from-white via-purple-200 to-pink-200 bg-clip-text text-transparent">
-            Build
+            Build1111
           </span>
           <br />
           <span className="bg-gradient-to-r from-purple-400 via-pink-400 to-blue-400 bg-clip-text text-transparent">
