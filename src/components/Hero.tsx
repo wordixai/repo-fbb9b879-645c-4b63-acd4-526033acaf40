@@ -19,17 +19,6 @@ const Hero: React.FC = () => {
       <div className="relative z-10 text-center px-4 max-w-5xl mx-auto">
 
 
-        {/* Main heading */}
-        <h1 className="text-6xl md:text-8xl font-bold mb-6 animate-fade-in-up">
-          <span className="bg-gradient-to-r from-white via-purple-200 to-pink-200 bg-clip-text text-transparent">
-            Build1111
-          </span>
-          <br />
-          <span className="bg-gradient-to-r from-purple-400 via-pink-400 to-blue-400 bg-clip-text text-transparent">
-            Amazing Things
-          </span>
-        </h1>
-
         {/* Subtitle */}
         <p className="text-xl md:text-2xl text-gray-300 mb-12 max-w-3xl mx-auto leading-relaxed animate-fade-in-up delay-200">
           Unleash your creativity with our comprehensive toolkit. From design to deployment, 
